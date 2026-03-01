@@ -3,13 +3,13 @@ import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10
 
 // Firebase config
 const firebaseConfig = {
-  apiKey: "AIzaSyAoE0KT_XObQDO6HHMvfuN13kImWg17HfE",
-  authDomain: "waste-collection-robot-85d70.firebaseapp.com",
-  databaseURL: "https://waste-collection-robot-85d70-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "waste-collection-robot-85d70",
-  storageBucket: "waste-collection-robot-85d70.firebasestorage.app",
-  messagingSenderId: "112532754158",
-  appId: "1:112532754158:web:e96f93826c3fd53b3aadff"
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  databaseURL: "YOUR_DATABASE_URL",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID"
 };
 
 const app = initializeApp(firebaseConfig);
