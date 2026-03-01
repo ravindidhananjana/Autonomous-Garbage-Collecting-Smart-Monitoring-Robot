@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Autonomous Garbage Robot Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-recycle"></i> Autonomous Garbage Robot</h1>
+      <p>Real-time Waste Management Dashboard</p>
+    </header>
+
+    <div class="dashboard">
+      <!-- Garbage Level Card -->
+      <div class="card glass">
+        <h2>Garbage Level</h2>
+        <div class="circular-progress">
+          <svg viewBox="0 0 120 120">
+            <circle class="bg" cx="60" cy="60" r="50"></circle>
+            <circle class="progress" cx="60" cy="60" r="50"></circle>
+          </svg>
+          <div class="percentage" id="levelText">0%</div>
+        </div>
+        <span id="status" class="status loading">Loading...</span>
+      </div>
+
+      <!-- Lid Status Card -->
+      <div class="card glass">
+        <h2>Lid Status</h2>
+        <div class="lid-container">
+          <div id="lidIcon" class="lid-icon"></div>
+          <span id="lidStatus" class="status loading">Loading...</span>
+        </div>
+      </div>
+
+      <!-- Robot Status Card -->
+      <div class="card glass robot-card">
+        <h2><i class="fas fa-robot"></i> Robot Status</h2>
+        <div class="robot-info">
+          <div class="robot-item">
+            <i class="fas fa-power-off"></i>
+            <span>State:</span>
+            <span id="robotState" class="status loading">Loading...</span>
+          </div>
+          <div class="robot-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Target:</span>
+            <span id="robotTarget" class="status loading">Loading...</span>
+          </div>
+          <div class="robot-item">
+            <i class="fas fa-ruler-vertical"></i>
+            <span>Obstacle:</span>
+            <span id="robotObstacle" class="status loading">Loading...</span>
+            <span>cm</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- History Chart Section -->
+    <div class="card glass chart-card">
+      <h2><i class="fas fa-chart-line"></i> Garbage Level History</h2>
+      <p class="chart-subtitle">Last 30 minutes (updated every 30 seconds)</p>
+      <div id="historyChart" class="chart-container"></div>
+    </div>
+  </div>
+
+  <!-- Firebase & Recharts -->
+  <script type="module" src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react@18/umd/react.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/recharts@2.12.7/umd/Recharts.min.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
